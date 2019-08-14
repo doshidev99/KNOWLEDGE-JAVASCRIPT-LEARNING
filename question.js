@@ -1,4 +1,3 @@
-
 /*What is the differences between SVG and PNG files?
     Mô tả những nhân tố của cấu trúc nhiều lớp và công dụng của chúng là gì.
     Sử dụng SASS và SCSS có điểm gì khác biệt so với CSS thông thường ?
@@ -14,20 +13,37 @@
 
 */
 
-
 function findMaxDiff(arr) {
-    if(arr.length === 1 || arr.length === 0) {
-        return 0;
-    } else {
-        var max = Math.abs(arr[1] - arr[0]); ///
-        for(let i = 1 ; i < arr.length; i++) {
-            if(Math.abs(arr[i] - arr[i + 1]) > max ) {
-                max = Math.abs(arr[i] - arr[i + 1]);
-            }
-        }
-        return max;
+  if (arr.length === 1 || arr.length === 0) {
+    return 0;
+  } else {
+    var max = Math.abs(arr[1] - arr[0]); ///
+    for (let i = 1; i < arr.length; i++) {
+      if (Math.abs(arr[i] - arr[i + 1]) > max) {
+        max = Math.abs(arr[i] - arr[i + 1]);
+      }
     }
+    return max;
+  }
 }
 
-
 console.log(findMaxDiff([1, -10, 5, 18, -9, 34, 5]));
+
+// Promise
+
+const promise1 = () => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res('hello 02');
+    }, 3000);
+  });
+};
+
+const main = async () => {
+  console.log('hello 01');
+  const value = await promise1();
+  console.log(value);
+  console.log('hello 03');
+};
+
+main();
